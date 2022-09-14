@@ -1,0 +1,19 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L299",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).Accounting",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "21",
+			"ValuationArea": "0001",
+			"ValuationClass": "7920",
+			"StandardPrice": "1000.00",
+			"PriceUnitQty": "1",
+			"MovingAveragePrice": "0.00",
+			"PriceLastChangeDate": "",
+			"PlannedPrice": "0.00",
+			"IsMarkedForDeletion": false
+		}
+	],
+	"time": "2022-09-08T18:53:17+09:00"
+}

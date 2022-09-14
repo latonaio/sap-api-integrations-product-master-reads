@@ -1,0 +1,19 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L243",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).WorkScheduling",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "21",
+			"Plant": "0001",
+			"ProductionInvtryManagedLoc": "0001",
+			"ProductProcessingTime": "0.00",
+			"ProductionSupervisor": "",
+			"ProductProductionQuantityUnit": "",
+			"ProdnOrderIsBatchRequired": "1",
+			"MatlCompIsMarkedForBackflush": "",
+			"ProductionSchedulingProfile": ""
+		}
+	],
+	"time": "2022-09-08T19:00:42+09:00"
+}

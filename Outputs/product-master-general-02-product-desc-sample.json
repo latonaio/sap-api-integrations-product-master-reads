@@ -1,0 +1,18 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L117",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).General",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "21",
+			"Language": "JA",
+			"ProductDescription": "請求"
+		},
+		{
+			"Product": "21",
+			"Language": "EN",
+			"ProductDescription": "Invoice"
+		}
+	],
+	"time": "2022-09-08T18:46:52+09:00"
+}

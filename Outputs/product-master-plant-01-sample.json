@@ -1,0 +1,29 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L159",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).Plant",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "21",
+			"Plant": "0001",
+			"PurchasingGroup": "",
+			"ProductionInvtryManagedLoc": "0001",
+			"AvailabilityCheckType": "02",
+			"ProfitCenter": "",
+			"GoodsReceiptDuration": "5",
+			"MRPType": "ND",
+			"MRPResponsible": "001",
+			"MinimumLotSizeQuantity": "0",
+			"MaximumLotSizeQuantity": "0",
+			"FixedLotSizeQuantity": "0",
+			"IsBatchManagementRequired": false,
+			"ProcurementType": "X",
+			"IsInternalBatchManaged": false,
+			"GoodsIssueUnit": "",
+			"MaterialFreightGroup": "",
+			"ProductLogisticsHandlingGroup": "",
+			"IsMarkedForDeletion": false
+		}
+	],
+	"time": "2022-09-08T18:50:53+09:00"
+}
