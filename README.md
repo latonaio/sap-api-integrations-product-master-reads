@@ -173,23 +173,23 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 	"level": "INFO",
 	"message": [
 		{
-			"Product": "A001",
+			"Product": "21",
 			"IndustrySector": "M",
-			"ProductType": "SERV",
-			"BaseUnit": "AU",
-			"ValidityStartDate": "",
-			"ProductGroup": "A001",
-			"Division": "00",
-			"GrossWeight": "0.000",
+			"ProductType": "FERT",
+			"BaseUnit": "PC",
+			"ValidityStartDate": "2022-01-25T09:00:00+09:00",
+			"ProductGroup": "01",
+			"Division": "",
+			"GrossWeight": "2.000",
 			"WeightUnit": "KG",
 			"SizeOrDimensionText": "",
 			"ProductStandardID": "",
-			"CreationDate": "2016-06-20T09:00:00+09:00",
-			"LastChangeDate": "2017-04-11T09:00:00+09:00",
+			"CreationDate": "",
+			"LastChangeDate": "2022-09-08T09:00:00+09:00",
 			"IsMarkedForDeletion": false,
-			"NetWeight": "0.000",
+			"NetWeight": "1.000",
 			"ChangeNumber": "",
-			"to_Description": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product('A001')/to_Description"
+			"to_Description": "http://100.21.57.120:8080/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product('21')/to_Description"
 		}
 	],
 	"time": "2022-01-26T14:51:52.138052513+09:00"

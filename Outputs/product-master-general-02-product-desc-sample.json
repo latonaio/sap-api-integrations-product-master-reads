@@ -4,15 +4,10 @@
 	"level": "INFO",
 	"message": [
 		{
-			"Product": "21",
+			"Product": "66",
 			"Language": "JA",
-			"ProductDescription": "請求"
-		},
-		{
-			"Product": "21",
-			"Language": "EN",
-			"ProductDescription": "Invoice"
+			"ProductDescription": "Test Indirect Material"
 		}
 	],
-	"time": "2022-09-08T18:46:52+09:00"
+	"time": "2022-09-19T13:28:29+09:00"
 }
