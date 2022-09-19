@@ -168,30 +168,30 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 
 ```
 {
-	"cursor": "/home/ampamman/go/src/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L108",
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L110",
 	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).General",
 	"level": "INFO",
 	"message": [
 		{
-			"Product": "21",
+			"Product": "66",
 			"IndustrySector": "M",
-			"ProductType": "FERT",
-			"BaseUnit": "PC",
-			"ValidityStartDate": "2022-01-25T09:00:00+09:00",
+			"ProductType": "NLAG",
+			"BaseUnit": "KG",
+			"ValidityStartDate": "",
 			"ProductGroup": "01",
 			"Division": "",
-			"GrossWeight": "2.000",
-			"WeightUnit": "KG",
+			"GrossWeight": "0.000",
+			"WeightUnit": "",
 			"SizeOrDimensionText": "",
 			"ProductStandardID": "",
-			"CreationDate": "",
-			"LastChangeDate": "2022-09-08T09:00:00+09:00",
+			"CreationDate": "2022-09-16",
+			"LastChangeDate": "2022-09-16",
 			"IsMarkedForDeletion": false,
-			"NetWeight": "1.000",
+			"NetWeight": "0.000",
 			"ChangeNumber": "",
-			"to_Description": "http://100.21.57.120:8080/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product('21')/to_Description"
+			"to_Description": "http://100.21.57.120:8080/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product('66')/to_Description"
 		}
 	],
-	"time": "2022-01-26T14:51:52.138052513+09:00"
+	"time": "2022-09-19T13:28:29+09:00"
 }
 ```
