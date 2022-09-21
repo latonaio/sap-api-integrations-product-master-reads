@@ -105,16 +105,17 @@ func (c *SAPAPICaller) General(product string) {
 	generalData, err := c.callProductSrvAPIRequirementGeneral("A_Product", product)
 	if err != nil {
 		c.log.Error(err)
-		return
+	} else {
+	    c.log.Info(generalData)
 	}
-	c.log.Info(generalData)
 
 	productDescData, err := c.callToProductDesc(generalData[0].ToProductDesc)
 	if err != nil {
 		c.log.Error(err)
-		return
-	}
-	c.log.Info(productDescData)
+	} else {
+	    c.log.Info(productDescData)
+    }
+	return
 }
 
 func (c *SAPAPICaller) callProductSrvAPIRequirementGeneral(api, product string) ([]sap_api_output_formatter.General, error) {
