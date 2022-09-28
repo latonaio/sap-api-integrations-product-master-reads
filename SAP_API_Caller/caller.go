@@ -28,7 +28,7 @@ func NewSAPAPICaller(baseUrl, sapClientNumber string, requestClient *sap_api_get
 	}
 }
 
-func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription, country, taxCategory string, accepter []string) {
+func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, storageLocation, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription, country, taxCategory string, accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
@@ -41,6 +41,11 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 		case "Plant":
 			func() {
 				c.Plant(product, plant)
+				wg.Done()
+			}()
+		case "StorageLocation":
+			func() {
+				c.StorageLocation(product, plant, storageLocation)
 				wg.Done()
 			}()
 		case "MRPArea":
@@ -173,6 +178,34 @@ func (c *SAPAPICaller) callProductSrvAPIRequirementPlant(api, product, plant str
 
 	byteArray, _ := ioutil.ReadAll(resp.Body)
 	data, err := sap_api_output_formatter.ConvertToPlant(byteArray, c.log)
+	if err != nil {
+		return nil, fmt.Errorf("convert error: %w", err)
+	}
+	return data, nil
+}
+
+func (c *SAPAPICaller) StorageLocation(product, plant, storageLocation string) {
+	data, err := c.callProductSrvAPIRequirementStorageLocation("A_ProductStorageLocation", product, plant, storageLocation)
+	if err != nil {
+		c.log.Error(err)
+		return
+	}
+	c.log.Info(data)
+}
+
+func (c *SAPAPICaller) callProductSrvAPIRequirementStorageLocation(api, product, plant, storageLocation string) ([]sap_api_output_formatter.StorageLocation, error) {
+	url := strings.Join([]string{c.baseURL, "API_PRODUCT_SRV", api}, "/")
+
+	param := c.getQueryWithStorageLocation(map[string]string{}, product, plant, storageLocation)
+
+	resp, err := c.requestClient.Request("GET", url, param, "")
+	if err != nil {
+		return nil, fmt.Errorf("API request error: %w", err)
+	}
+	defer resp.Body.Close()
+
+	byteArray, _ := ioutil.ReadAll(resp.Body)
+	data, err := sap_api_output_formatter.ConvertToStorageLocation(byteArray, c.log)
 	if err != nil {
 		return nil, fmt.Errorf("convert error: %w", err)
 	}
@@ -482,6 +515,14 @@ func (c *SAPAPICaller) getQueryWithPlant(params map[string]string, product, plan
 		params = make(map[string]string, 1)
 	}
 	params["$filter"] = fmt.Sprintf("Product eq '%s' and Plant eq '%s'", product, plant)
+	return params
+}
+
+func (c *SAPAPICaller) getQueryWithStorageLocation(params map[string]string, product, plant, storageLocation string) map[string]string {
+	if len(params) == 0 {
+		params = make(map[string]string, 1)
+	}
+	params["$filter"] = fmt.Sprintf("Product eq '%s' and Plant eq '%s' and StorageLocation eq '%s'", product, plant, storageLocation)
 	return params
 }
 

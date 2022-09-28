@@ -88,6 +88,50 @@ func ConvertToPlant(raw []byte, l *logger.Logger) ([]Plant, error) {
 	return plant, nil
 }
 
+func ConvertToStorageLocation(raw []byte, l *logger.Logger) ([]StorageLocation, error) {
+	pm := &responses.StorageLocation{}
+	err := json.Unmarshal(raw, pm)
+	if err != nil {
+		return nil, xerrors.Errorf("cannot convert to StorageLocation. unmarshal error: %w", err)
+	}
+	if len(pm.D.Results) == 0 {
+		return nil, xerrors.New("Result data is not exist")
+	}
+	if len(pm.D.Results) > 10 {
+		l.Info("raw data has too many Results. %d Results exist. show the first 10 of Results array", len(pm.D.Results))
+	}
+	storageLocation := make([]StorageLocation, 0, 10)
+	for i := 0; i < 10 && i < len(pm.D.Results); i++ {
+		data := pm.D.Results[i]
+		storageLocation = append(storageLocation, StorageLocation{
+			Product:                        data.Product,
+			Plant:                          data.Plant,
+			StorageLocation:                data.StorageLocation,
+			WarehouseStorageBin:            data.WarehouseStorageBin,
+			MaintenanceStatus:              data.MaintenanceStatus,
+			PhysicalInventoryBlockInd:      data.PhysicalInventoryBlockInd,
+			CreationDate:                   data.CreationDate,
+			IsMarkedForDeletion:            data.IsMarkedForDeletion,
+			DateOfLastPostedCntUnRstrcdStk: data.DateOfLastPostedCntUnRstrcdStk,
+			InventoryCorrectionFactor:      data.InventoryCorrectionFactor,
+			InvtryRestrictedUseStockInd:    data.InvtryRestrictedUseStockInd,
+			InvtryCurrentYearStockInd:      data.InvtryCurrentYearStockInd,
+			InvtryQualInspCurrentYrStkInd:  data.InvtryQualInspCurrentYrStkInd,
+			InventoryBlockStockInd:         data.InventoryBlockStockInd,
+			InvtryRestStockPrevPeriodInd:   data.InvtryRestStockPrevPeriodInd,
+			InventoryStockPrevPeriod:       data.InventoryStockPrevPeriod,
+			InvtryStockQltyInspPrevPeriod:  data.InvtryStockQltyInspPrevPeriod,
+			HasInvtryBlockStockPrevPeriod:  data.HasInvtryBlockStockPrevPeriod,
+			FiscalYearCurrentPeriod:        data.FiscalYearCurrentPeriod,
+			FiscalMonthCurrentPeriod:       data.FiscalMonthCurrentPeriod,
+			FiscalYearCurrentInvtryPeriod:  data.FiscalYearCurrentInvtryPeriod,
+			LeanWrhsManagementPickingArea:  data.LeanWrhsManagementPickingArea,
+		})
+	}
+
+	return storageLocation, nil
+}
+
 func ConvertToMRPArea(raw []byte, l *logger.Logger) ([]MRPArea, error) {
 	pm := &responses.MRPArea{}
 	err := json.Unmarshal(raw, pm)

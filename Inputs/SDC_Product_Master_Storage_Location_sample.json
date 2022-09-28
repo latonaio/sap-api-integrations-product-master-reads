@@ -40,7 +40,7 @@
 			"ProductLogisticsHandlingGroup": "",
 			"IsMarkedForDeletion": null,
             "StorageLocation": {
-                "StorageLocation": "",
+                "StorageLocation": "0001",
                 "WarehouseStorageBin": "",
                 "MaintenanceStatus": "",
                 "PhysicalInventoryBlockInd": "",
@@ -143,7 +143,7 @@
 		}
 	},
 	"api_schema": "SAPProductMasterReads",
-	"accepter": ["Quality"],
+	"accepter": ["StorageLocation"],
 	"material_code": "21",
 	"deleted": false
 }

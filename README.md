@@ -27,6 +27,7 @@ sap-api-integrations-product-master-reads には、次の API をコールする
 
 * A_Product（品目マスタ - 一般データ）
 * A_ProductPlant（品目マスタ - プラントデータ）
+* A_ProductStorageLocation（品目マスタ - 保管場所データ）
 * A_ProductPlantMRPArea（品目マスタ - MRPエリアデータ）
 * A_ProductPlantProcurement（品目マスタ - 購買データ）
 * A_ProductWorkScheduling（品目マスタ - 作業計画データ）
@@ -45,6 +46,7 @@ sap-api-integrations-product-master-reads において、API への値入力条�
 
 * inoutSDC.Product.Product（品目）
 * inoutSDC.Product.Plant.Plant（プラント）
+* inoutSDC.Product.Plant.StorageLocation.StorageLocation（保管場所）
 * inoutSDC.Product.Plant.MRPArea.MRPArea（MRPエリア）
 * inoutSDC.Product.Accounting.ValuationArea（評価エリア）
 * inoutSDC.Product.SalesOrganization.ProductSalesOrg（販売組織）
@@ -65,7 +67,7 @@ accepter において 下記の例のように、データの種別（＝APIの�
 ここでは、"General", "Plant", "Accounting" が指定されています。    
   
 ```
-  "api_schema": "sap.s4.beh.product.v1.Product.Created.v1",
+  "api_schema": "SAPProductMasterReads",
   "accepter": ["General", "Plant", "Accounting"],
   "material_code": "21",
   "deleted": false
@@ -76,7 +78,7 @@ accepter において 下記の例のように、データの種別（＝APIの�
 全データを取得する場合、sample.json は以下のように記載します。  
 
 ```
-  "api_schema": "sap.s4.beh.product.v1.Product.Created.v1",
+  "api_schema": "SAPProductMasterReads",
   "accepter": ["All"],
   "material_code": "21",
   "deleted": false
@@ -87,7 +89,7 @@ accepter における データ種別 の指定に基づいて SAP_API_Caller �
 caller.go の func() 毎 の 以下の箇所が、指定された API をコールするソースコードです。  
 
 ```
-func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription, country, taxCategory string, accepter []string) {
+func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, storageLocation, mrpArea, valuationArea, productSalesOrg, productDistributionChnl, language, productDescription, country, taxCategory string, accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
@@ -100,6 +102,11 @@ func (c *SAPAPICaller) AsyncGetProductMaster(product, plant, mrpArea, valuationA
 		case "Plant":
 			func() {
 				c.Plant(product, plant)
+				wg.Done()
+			}()
+		case "StorageLocation":
+			func() {
+				c.StorageLocation(product, plant, storageLocation)
 				wg.Done()
 			}()
 		case "MRPArea":

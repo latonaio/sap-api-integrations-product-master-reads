@@ -58,7 +58,7 @@ type SDC struct {
 	Result        bool   `json:"result"`
 	RedisKey      string `json:"redis_key"`
 	Filepath      string `json:"filepath"`
-	Product      struct {
+	Product       struct {
 		Product             string `json:"Material"`
 		IndustrySector      string `json:"IndustrySector"`
 		ProductType         string `json:"ProductType"`
@@ -94,7 +94,29 @@ type SDC struct {
 			MaterialFreightGroup          string `json:"MaterialFreightGroup"`
 			ProductLogisticsHandlingGroup string `json:"ProductLogisticsHandlingGroup"`
 			IsMarkedForDeletion           bool   `json:"IsMarkedForDeletion"`
-			MRPArea                       struct {
+			StorageLocation               struct {
+				StorageLocation                string `json:"StorageLocation"`
+				WarehouseStorageBin            string `json:"WarehouseStorageBin"`
+				MaintenanceStatus              string `json:"MaintenanceStatus"`
+				PhysicalInventoryBlockInd      string `json:"PhysicalInventoryBlockInd"`
+				CreationDate                   string `json:"CreationDate"`
+				IsMarkedForDeletion            bool   `json:"IsMarkedForDeletion"`
+				DateOfLastPostedCntUnRstrcdStk string `json:"DateOfLastPostedCntUnRstrcdStk"`
+				InventoryCorrectionFactor      string `json:"InventoryCorrectionFactor"`
+				InvtryRestrictedUseStockInd    string `json:"InvtryRestrictedUseStockInd"`
+				InvtryCurrentYearStockInd      string `json:"InvtryCurrentYearStockInd"`
+				InvtryQualInspCurrentYrStkInd  string `json:"InvtryQualInspCurrentYrStkInd"`
+				InventoryBlockStockInd         string `json:"InventoryBlockStockInd"`
+				InvtryRestStockPrevPeriodInd   string `json:"InvtryRestStockPrevPeriodInd"`
+				InventoryStockPrevPeriod       string `json:"InventoryStockPrevPeriod"`
+				InvtryStockQltyInspPrevPeriod  string `json:"InvtryStockQltyInspPrevPeriod"`
+				HasInvtryBlockStockPrevPeriod  string `json:"HasInvtryBlockStockPrevPeriod"`
+				FiscalYearCurrentPeriod        string `json:"FiscalYearCurrentPeriod"`
+				FiscalMonthCurrentPeriod       string `json:"FiscalMonthCurrentPeriod"`
+				FiscalYearCurrentInvtryPeriod  string `json:"FiscalYearCurrentInvtryPeriod"`
+				LeanWrhsManagementPickingArea  string `json:"FiscalYearCurrentInvtryPeriod"`
+			} `json:"StorageLocation"`
+			MRPArea struct {
 				MRPArea                       string `json:"MRPArea"`
 				MRPType                       string `json:"MRPType"`
 				MRPResponsible                string `json:"MRPResponsible"`
@@ -123,7 +145,7 @@ type SDC struct {
 			SalesPlant struct {
 				LoadingGroup          string `json:"LoadingGroup"`
 				AvailabilityCheckType string `json:"AvailabilityCheckType"`
-			} `json:"Sales_Plant"`
+			} `json:"SalesPlant"`
 			WorkScheduling struct {
 				ProductionInvtryManagedLoc    string `json:"ProductionInvtryManagedLoc"`
 				ProductProcessingTime         string `json:"ProductProcessingTime"`
@@ -132,16 +154,16 @@ type SDC struct {
 				ProdnOrderIsBatchRequired     string `json:"ProdnOrderIsBatchRequired"`
 				MatlCompIsMarkedForBackflush  string `json:"MatlCompIsMarkedForBackflush"`
 				ProductionSchedulingProfile   string `json:"ProductionSchedulingProfile"`
-			} `json:"Work_Scheduling"`
+			} `json:"WorkScheduling"`
 			Quality struct {
-				MaximumStoragePeriod           string      `json:"MaximumStoragePeriod"`
-				QualityMgmtCtrlKey             string      `json:"QualityMgmtCtrlKey"`
-				MatlQualityAuthorizationGroup  string      `json:"MatlQualityAuthorizationGroup"`
-				HasPostToInspectionStock       bool        `json:"HasPostToInspectionStock"`
-				InspLotDocumentationIsRequired bool        `json:"InspLotDocumentationIsRequired"`
-				SuplrQualityManagementSystem   string      `json:"SuplrQualityManagementSystem"`
-				RecrrgInspIntervalTimeInDays   string      `json:"RecrrgInspIntervalTimeInDays"`
-				ProductQualityCertificateType  string      `json:"ProductQualityCertificateType"`
+				MaximumStoragePeriod           string `json:"MaximumStoragePeriod"`
+				QualityMgmtCtrlKey             string `json:"QualityMgmtCtrlKey"`
+				MatlQualityAuthorizationGroup  string `json:"MatlQualityAuthorizationGroup"`
+				HasPostToInspectionStock       bool   `json:"HasPostToInspectionStock"`
+				InspLotDocumentationIsRequired bool   `json:"InspLotDocumentationIsRequired"`
+				SuplrQualityManagementSystem   string `json:"SuplrQualityManagementSystem"`
+				RecrrgInspIntervalTimeInDays   string `json:"RecrrgInspIntervalTimeInDays"`
+				ProductQualityCertificateType  string `json:"ProductQualityCertificateType"`
 			} `json:"Quality"`
 		} `json:"Plant"`
 		SalesOrganization struct {
@@ -154,7 +176,7 @@ type SDC struct {
 			SalesMeasureUnit               string `json:"SalesMeasureUnit"`
 			ProductHierarchy               string `json:"ProductHierarchy"`
 			IsMarkedForDeletion            bool   `json:"IsMarkedForDeletion"`
-		} `json:"Sales_Organization"`
+		} `json:"SalesOrganization"`
 		Accounting struct {
 			ValuationArea       string `json:"ValuationArea"`
 			ValuationClass      string `json:"ValuationClass"`

@@ -12,23 +12,23 @@ type ProductMaster struct {
 }
 
 type General struct {
-	Product                   string `json:"Product"`
-	IndustrySector            string `json:"IndustrySector"`
-	ProductType               string `json:"ProductType"`
-	BaseUnit                  string `json:"BaseUnit"`
-	ValidityStartDate         string `json:"ValidityStartDate"`
-	ProductGroup              string `json:"ProductGroup"`
-	Division                  string `json:"Division"`
-	GrossWeight               string `json:"GrossWeight"`
-	WeightUnit                string `json:"WeightUnit"`
-	SizeOrDimensionText       string `json:"SizeOrDimensionText"`
-	ProductStandardID         string `json:"ProductStandardID"`
-	CreationDate              string `json:"CreationDate"`
-	LastChangeDate            string `json:"LastChangeDate"`
-	IsMarkedForDeletion       bool   `json:"IsMarkedForDeletion"`
-	NetWeight                 string `json:"NetWeight"`
-	ChangeNumber              string `json:"ChangeNumber"`
-	ToProductDesc             string `json:"to_Description"`
+	Product             string `json:"Product"`
+	IndustrySector      string `json:"IndustrySector"`
+	ProductType         string `json:"ProductType"`
+	BaseUnit            string `json:"BaseUnit"`
+	ValidityStartDate   string `json:"ValidityStartDate"`
+	ProductGroup        string `json:"ProductGroup"`
+	Division            string `json:"Division"`
+	GrossWeight         string `json:"GrossWeight"`
+	WeightUnit          string `json:"WeightUnit"`
+	SizeOrDimensionText string `json:"SizeOrDimensionText"`
+	ProductStandardID   string `json:"ProductStandardID"`
+	CreationDate        string `json:"CreationDate"`
+	LastChangeDate      string `json:"LastChangeDate"`
+	IsMarkedForDeletion bool   `json:"IsMarkedForDeletion"`
+	NetWeight           string `json:"NetWeight"`
+	ChangeNumber        string `json:"ChangeNumber"`
+	ToProductDesc       string `json:"to_Description"`
 }
 
 type Plant struct {
@@ -51,6 +51,31 @@ type Plant struct {
 	MaterialFreightGroup          string `json:"MaterialFreightGroup"`
 	ProductLogisticsHandlingGroup string `json:"ProductLogisticsHandlingGroup"`
 	IsMarkedForDeletion           bool   `json:"IsMarkedForDeletion"`
+}
+
+type StorageLocation struct {
+	Product                        string `json:"Product"`
+	Plant                          string `json:"Plant"`
+	StorageLocation                string `json:"StorageLocation"`
+	WarehouseStorageBin            string `json:"WarehouseStorageBin"`
+	MaintenanceStatus              string `json:"MaintenanceStatus"`
+	PhysicalInventoryBlockInd      string `json:"PhysicalInventoryBlockInd"`
+	CreationDate                   string `json:"CreationDate"`
+	IsMarkedForDeletion            bool   `json:"IsMarkedForDeletion"`
+	DateOfLastPostedCntUnRstrcdStk string `json:"DateOfLastPostedCntUnRstrcdStk"`
+	InventoryCorrectionFactor      string `json:"InventoryCorrectionFactor"`
+	InvtryRestrictedUseStockInd    string `json:"InvtryRestrictedUseStockInd"`
+	InvtryCurrentYearStockInd      string `json:"InvtryCurrentYearStockInd"`
+	InvtryQualInspCurrentYrStkInd  string `json:"InvtryQualInspCurrentYrStkInd"`
+	InventoryBlockStockInd         string `json:"InventoryBlockStockInd"`
+	InvtryRestStockPrevPeriodInd   string `json:"InvtryRestStockPrevPeriodInd"`
+	InventoryStockPrevPeriod       string `json:"InventoryStockPrevPeriod"`
+	InvtryStockQltyInspPrevPeriod  string `json:"InvtryStockQltyInspPrevPeriod"`
+	HasInvtryBlockStockPrevPeriod  string `json:"HasInvtryBlockStockPrevPeriod"`
+	FiscalYearCurrentPeriod        string `json:"FiscalYearCurrentPeriod"`
+	FiscalMonthCurrentPeriod       string `json:"FiscalMonthCurrentPeriod"`
+	FiscalYearCurrentInvtryPeriod  string `json:"FiscalYearCurrentInvtryPeriod"`
+	LeanWrhsManagementPickingArea  string `json:"LeanWrhsManagementPickingArea"`
 }
 
 type MRPArea struct {

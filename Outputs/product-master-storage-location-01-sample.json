@@ -1,0 +1,32 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-product-master-reads/SAP_API_Caller/caller.go#L193",
+	"function": "sap-api-integrations-product-master-reads/SAP_API_Caller.(*SAPAPICaller).StorageLocation",
+	"level": "INFO",
+	"message": [
+		{
+			"Product": "21",
+			"Plant": "0001",
+			"StorageLocation": "0001",
+			"WarehouseStorageBin": "",
+			"MaintenanceStatus": "DL",
+			"PhysicalInventoryBlockInd": "",
+			"CreationDate": "2022-09-12",
+			"IsMarkedForDeletion": false,
+			"DateOfLastPostedCntUnRstrcdStk": "",
+			"InventoryCorrectionFactor": "0",
+			"InvtryRestrictedUseStockInd": "",
+			"InvtryCurrentYearStockInd": "",
+			"InvtryQualInspCurrentYrStkInd": "",
+			"InventoryBlockStockInd": "",
+			"InvtryRestStockPrevPeriodInd": "",
+			"InventoryStockPrevPeriod": "",
+			"InvtryStockQltyInspPrevPeriod": "",
+			"HasInvtryBlockStockPrevPeriod": "",
+			"FiscalYearCurrentPeriod": "1998",
+			"FiscalMonthCurrentPeriod": "3",
+			"FiscalYearCurrentInvtryPeriod": "1998",
+			"LeanWrhsManagementPickingArea": ""
+		}
+	],
+	"time": "2022-09-28T20:17:55+09:00"
+}

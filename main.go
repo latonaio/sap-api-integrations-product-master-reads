@@ -21,12 +21,12 @@ func main() {
 		gc,
 		l,
 	)
-	inputSDC := fr.ReadSDC("./Inputs/SDC_Product_Master_General_sample.json")
+	inputSDC := fr.ReadSDC("./Inputs/SDC_Product_Master_Storage_Location_sample.json")
 	sap_api_time_value_converter.ChangeTimeFormatToSAPFormatStruct(&inputSDC)
 	accepter := inputSDC.Accepter
 	if len(accepter) == 0 || accepter[0] == "All" {
 		accepter = []string{
-			"General", "Plant", "MRPArea", "Procurement",
+			"General", "Plant", "StorageLocation", "MRPArea", "Procurement",
 			"WorkScheduling", "SalesPlant",
 			"Accounting", "SalesOrganization", "ProductDescByProduct", "ProductDescByDesc",
 			"Quality", "SalesTax",
@@ -36,6 +36,7 @@ func main() {
 	caller.AsyncGetProductMaster(
 		inputSDC.Product.Product,
 		inputSDC.Product.Plant.Plant,
+		inputSDC.Product.Plant.StorageLocation.StorageLocation,
 		inputSDC.Product.Plant.MRPArea.MRPArea,
 		inputSDC.Product.Accounting.ValuationArea,
 		inputSDC.Product.SalesOrganization.ProductSalesOrg,

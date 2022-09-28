@@ -39,6 +39,28 @@
 			"MaterialFreightGroup": "",
 			"ProductLogisticsHandlingGroup": "",
 			"IsMarkedForDeletion": null,
+            "StorageLocation": {
+                "StorageLocation": "",
+                "WarehouseStorageBin": "",
+                "MaintenanceStatus": "",
+                "PhysicalInventoryBlockInd": "",
+                "CreationDate": "",
+                "IsMarkedForDeletion": null,
+                "DateOfLastPostedCntUnRstrcdStk": "",
+                "InventoryCorrectionFactor": "",
+                "InvtryRestrictedUseStockInd": "",
+                "InvtryCurrentYearStockInd": "",
+                "InvtryQualInspCurrentYrStkInd": "",
+                "InventoryBlockStockInd": "",
+                "InvtryRestStockPrevPeriodInd": "",
+                "InventoryStockPrevPeriod": "",
+                "InvtryStockQltyInspPrevPeriod": "",
+                "HasInvtryBlockStockPrevPeriod": "",
+                "FiscalYearCurrentPeriod": "",
+                "FiscalMonthCurrentPeriod": "",
+                "FiscalYearCurrentInvtryPeriod": "",
+                "LeanWrhsManagementPickingArea": ""
+            },
 			"MRPArea": {
 				"MRPArea": "",
 				"MRPType": "",
@@ -65,11 +87,11 @@
 				"IsAutoPurOrdCreationAllowed": true,
 				"IsSourceListRequired": true
 			},
-			"Sales_Plant": {
+			"SalesPlant": {
 				"LoadingGroup": "",
 				"AvailabilityCheckType": ""
 			},
-			"Work_Scheduling": {
+			"WorkScheduling": {
 				"ProductionInvtryManagedLoc": "",
 				"ProductProcessingTime": "",
 				"ProductionSupervisor": "",
@@ -89,7 +111,7 @@
 				"ProductQualityCertificateType": ""
 			}
 		},
-		"Sales_Organization": {
+		"SalesOrganization": {
 			"ProductSalesOrg": "",
 			"ProductDistributionChnl": "",
 			"SupplyingPlant": "",
@@ -120,7 +142,7 @@
 			"TaxClassification": ""
 		}
 	},
-	"api_schema": "sap.s4.beh.product.v1.Product.Created.v1",
+	"api_schema": "SAPProductMasterReads",
 	"accepter": ["WorkScheduling"],
 	"material_code": "21",
 	"deleted": false
