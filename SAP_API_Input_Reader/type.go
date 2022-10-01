@@ -59,22 +59,24 @@ type SDC struct {
 	RedisKey      string `json:"redis_key"`
 	Filepath      string `json:"filepath"`
 	Product       struct {
-		Product             string `json:"Material"`
-		IndustrySector      string `json:"IndustrySector"`
-		ProductType         string `json:"ProductType"`
-		BaseUnit            string `json:"BaseUnit"`
-		ValidityStartDate   string `json:"ValidityStartDate"`
-		ProductGroup        string `json:"ProductGroup"`
-		Division            string `json:"Division"`
-		GrossWeight         string `json:"GrossWeight"`
-		WeightUnit          string `json:"WeightUnit"`
-		SizeOrDimensionText string `json:"SizeOrDimensionText"`
-		ProductStandardID   string `json:"ProductStandardID"`
-		CreationDate        string `json:"CreationDate"`
-		LastChangeDate      string `json:"LastChangeDate"`
-		IsMarkedForDeletion string `json:"IsMarkedForDeletion"`
-		NetWeight           string `json:"NetWeight"`
-		ChangeNumber        string `json:"ChangeNumber"`
+		Product             			string `json:"Material"`
+		IndustrySector      			string `json:"IndustrySector"`
+		ProductType         			string `json:"ProductType"`
+		BaseUnit            			string `json:"BaseUnit"`
+		ValidityStartDate   			string `json:"ValidityStartDate"`
+		ProductGroup        			string `json:"ProductGroup"`
+		Division            			string `json:"Division"`
+		GrossWeight         			string `json:"GrossWeight"`
+		WeightUnit          			string `json:"WeightUnit"`
+		SizeOrDimensionText 			string `json:"SizeOrDimensionText"`
+		IndustryStandardName			string `json:"IndustryStandardName"`
+		ProductStandardID   			string `json:"ProductStandardID"`
+		InternationalArticleNumberCat	string `json:"InternationalArticleNumberCat"`
+		CreationDate        			string `json:"CreationDate"`
+		LastChangeDate      			string `json:"LastChangeDate"`
+		IsMarkedForDeletion 			string `json:"IsMarkedForDeletion"`
+		NetWeight           			string `json:"NetWeight"`
+		ChangeNumber        			string `json:"ChangeNumber"`
 		Plant               struct {
 			Plant                         string `json:"Plant"`
 			PurchasingGroup               string `json:"PurchasingGroup"`
